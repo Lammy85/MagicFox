@@ -69,9 +69,8 @@ margin: 1%;
 
 .footer {
     background-color: rgb(207, 207, 207, 0.8);
-    position: relative;
-    bottom: 0px;
-    top: 50px;
+    position: fixed;
+    bottom: 0%;
     width: 100%;
 }
 
