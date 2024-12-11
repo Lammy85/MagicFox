@@ -7,11 +7,13 @@ export class InputHandler {
                 e.key === 'ArrowUp' ||
                 e.key === 'ArrowLeft' ||
                 e.key === 'ArrowRight' ||
-                e.key === 'Enter'
+                (e.key === 'Enter' && !this.game.startscreen)
             ) && this.keys.indexOf(e.key) === -1) {
                 this.keys.push(e.key);
             } else if (e.key === 'd') this.game.debug = !this.game.debug;
             else if (e.key === 'p') this.game.pause = !this.game.pause;
+            else if (e.key === 'r') this.game.restartGame();
+            else if (e.key === 'Enter' && this.game.startscreen) this.game.startscreen = false;
             
         });
         window.addEventListener('keyup', e => {

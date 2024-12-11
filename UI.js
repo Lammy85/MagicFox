@@ -47,6 +47,12 @@ export class UI {
             context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
             context.fillText('Pause', this.game.width * 0.5, this.game.height * 0.5 - 20);
         }
+        // startscreen message
+        if (this.game.startscreen){
+            context.textAlign = 'center';
+            context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
+            context.fillText('Press Enter to start', this.game.width * 0.5, this.game.height * 0.5 - 20);
+        }
         context.restore();
     }
 }

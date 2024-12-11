@@ -37,11 +37,12 @@ window.addEventListener('load', function () {
             this.gameOver = false;
             this.lives = 5;
             this.pause = false;
+            this.startscreen = true;
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
         }
         update(deltaTime) {
-            if (!game.pause) {
+            if (!game.pause && !game.startscreen) {
                 this.time -= deltaTime;
                 if (this.player.energy > 0 &&
                     (this.player.currentState === this.player.states[4] ||
@@ -106,6 +107,10 @@ window.addEventListener('load', function () {
             if (this.speed > 0 && Math.random() < 0.5) this.enemies.push(new GroundEnemy(this));
             else if (this.speed > 0) this.enemies.push(new ClimbingEnemy(this));
             this.enemies.push(new FlyingEnemy(this));
+        }
+
+        restartGame() {
+            location.reload();
         }
     }
 
