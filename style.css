@@ -43,7 +43,8 @@
 }
 
 .accordion-item {
-margin: 1%;
+    margin: 1%;
+    margin-bottom: 10px;
 }
 
 #player,
@@ -69,8 +70,9 @@ margin: 1%;
 
 .footer {
     background-color: rgb(207, 207, 207, 0.8);
-    position: fixed;
-    bottom: 0%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
 }
 
