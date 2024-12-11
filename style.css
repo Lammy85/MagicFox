@@ -8,6 +8,10 @@
     background-color: rgb(207, 207, 207, 0.8);
 }
 
+#gamecontent {
+    height: 1500px;
+}
+
 #canvas1 {
     border: 5px solid black;
     position: relative;
