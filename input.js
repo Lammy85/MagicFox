@@ -15,7 +15,7 @@ export class InputHandler {
             else if (e.key === 'p') this.game.pause = !this.game.pause;
             else if (e.key === 'r') this.game.restartGame();
             else if (e.key === 'Enter' && this.game.startscreen) this.game.startscreen = false;
-            
+
         });
         window.addEventListener('keyup', e => {
             if (e.key === 'ArrowDown' ||
@@ -24,6 +24,7 @@ export class InputHandler {
                 e.key === 'ArrowRight' ||
                 e.key === 'Enter') {
                 this.keys.splice(this.keys.indexOf(e.key), 1);
+                e.preventDefault();
             }
         });
     }
