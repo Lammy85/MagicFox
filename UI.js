@@ -31,16 +31,16 @@ export class UI {
         if (this.game.gameOver) {
             context.textAlign = 'center';
             context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
-            if (this.game.score > this.game.winningScore) {
+            if (this.game.score > this.game.winningScore && this.game.lives > 0) {
                 context.fillText('Boo-yah', this.game.width * 0.5, this.game.height * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
                 context.fillText('What are creatures of the night afraid of? YOU!!!', this.game.width * 0.5, this.game.height * 0.5 + 20);
-            } else if (this.game.score > 99) {
+            } else if (this.game.score > 99 && this.game.lives > 0) {
                 context.fillText('Hell yeah', this.game.width * 0.5, this.game.height * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
                 context.fillText('No evil monster can stop you!', this.game.width * 0.5, this.game.height * 0.5 + 20);
-            }  
-            
+            }
+
             else {
                 context.fillText('Love at first bite?', this.game.width * 0.5, this.game.height * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
@@ -54,7 +54,7 @@ export class UI {
             context.fillText('Pause', this.game.width * 0.5, this.game.height * 0.5 - 20);
         }
         // startscreen message
-        if (this.game.startscreen){
+        if (this.game.startscreen) {
             context.textAlign = 'center';
             context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
             context.fillText('Press Enter to start', this.game.width * 0.5, this.game.height * 0.5 - 20);
