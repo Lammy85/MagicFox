@@ -31,20 +31,19 @@ export class UI {
         if (this.game.gameOver) {
             context.textAlign = 'center';
             context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
-            if (this.game.score >= this.game.winningScore && this.game.lives > 0) {
-                context.fillText('Boo-yah', this.game.width * 0.5, this.game.height * 0.5 - 20);
-                context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
-                context.fillText('What are creatures of the night afraid of? YOU!!!', this.game.width * 0.5, this.game.height * 0.5 + 20);
-            } else if (this.game.score > 99 && this.game.lives > 0) {
-                context.fillText('Hell yeah', this.game.width * 0.5, this.game.height * 0.5 - 20);
-                context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
-                context.fillText('No evil monster can stop you!', this.game.width * 0.5, this.game.height * 0.5 + 20);
-            }
 
-            else {
+            if (this.game.lives <= 0 || this.game.score < this.game.winningScore) {
                 context.fillText('Love at first bite?', this.game.width * 0.5, this.game.height * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
                 context.fillText('Nope. Better luck next time!', this.game.width * 0.5, this.game.height * 0.5 + 20);
+            } else if (this.game.score >= 100) {
+                context.fillText('Hell yeah', this.game.width * 0.5, this.game.height * 0.5 - 20);
+                context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
+                context.fillText('You are unstoppable!', this.game.width * 0.5, this.game.height * 0.5 + 20);
+            } else {
+                context.fillText('Boo-yah', this.game.width * 0.5, this.game.height * 0.5 - 20);
+                context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
+                context.fillText('What are creatures of the night afraid of? YOU!!!', this.game.width * 0.5, this.game.height * 0.5 + 20);
             }
         }
         // pause message
