@@ -1,7 +1,7 @@
 import { Player } from "./player.js";
 import { InputHandler } from "./input.js";
 import { Background } from "./background.js";
-import { FlyingEnemy, GroundEnemy, ClimbingEnemy } from "./enemies.js";
+import { FlyingEnemy, GroundEnemy, ClimbingEnemy, WalkingEnemy } from "./enemies.js";
 import { UI } from "./UI.js";
 
 window.addEventListener('load', function () {
@@ -107,6 +107,7 @@ window.addEventListener('load', function () {
             if (this.speed > 0 && Math.random() < 0.5) this.enemies.push(new GroundEnemy(this));
             else if (this.speed > 0) this.enemies.push(new ClimbingEnemy(this));
             this.enemies.push(new FlyingEnemy(this));
+            if (this.enemies.length % 4 == 0) this.enemies.push(new WalkingEnemy(this));
         }
 
         restartGame() {

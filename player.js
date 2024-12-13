@@ -1,6 +1,7 @@
 import { Sitting, Running, Jumping, Falling, Rolling, Diving, Hit } from "./playerStates.js";
 import { CollisionAnimation } from "./collisionAnimation.js";
 import { floatingMessage } from "./floatingMessages.js";
+import { WalkingEnemy } from "./enemies.js";
 
 export class Player {
     constructor(game) {
@@ -85,6 +86,9 @@ export class Player {
                     enemy.markedForDeletion = true;
                     this.game.score++;
                     this.game.floatingMessages.push(new floatingMessage('+1', enemy.x, enemy.y, 150, 50));
+                    if(enemy instanceof WalkingEnemy){
+                        enemy.zombiesound.play();
+                    }
                 } else if (!enemy.markedForDeletion) {
                     this.setState(6, 0);
                     enemy.markedForDeletion = true;

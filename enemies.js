@@ -91,3 +91,23 @@ export class ClimbingEnemy extends Enemy {
         context.stroke();
     }
 }
+
+export class WalkingEnemy extends Enemy {
+    constructor(game) {
+        super();
+        this.game = game;
+        this.width = 94;
+        this.height = 149;
+        this.x = this.game.width;
+        this.y = this.game.height - this.height - this.game.groundMargin;
+        this.speedX = Math.random() * 1 + 1;
+        this.speedY = 0;
+        this.maxFrame = 7;
+        this.image = document.getElementById('enemy_zombie');
+        this.zombiesound = new Audio();
+        this.zombiesound.src = "assets/zombie-2.wav";
+    }
+    update(deltaTime) {
+        super.update(deltaTime);
+    }
+}
