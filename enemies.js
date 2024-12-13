@@ -100,7 +100,7 @@ export class WalkingEnemy extends Enemy {
         this.height = 149;
         this.x = this.game.width;
         this.y = this.game.height - this.height - this.game.groundMargin;
-        this.speedX = Math.random() * 1 + 1;
+        this.speedX = Math.random() * 1.5 + 1;
         this.speedY = 0;
         this.maxFrame = 7;
         this.image = document.getElementById('enemy_zombie');

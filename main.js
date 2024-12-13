@@ -107,7 +107,7 @@ window.addEventListener('load', function () {
             if (this.speed > 0 && Math.random() < 0.5) this.enemies.push(new GroundEnemy(this));
             else if (this.speed > 0) this.enemies.push(new ClimbingEnemy(this));
             this.enemies.push(new FlyingEnemy(this));
-            if (this.enemies.length % 4 == 0) this.enemies.push(new WalkingEnemy(this));
+            if (this.enemies.length % 2 == 0) this.enemies.push(new WalkingEnemy(this));
         }
 
         restartGame() {
