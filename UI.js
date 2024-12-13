@@ -35,7 +35,13 @@ export class UI {
                 context.fillText('Boo-yah', this.game.width * 0.5, this.game.height * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
                 context.fillText('What are creatures of the night afraid of? YOU!!!', this.game.width * 0.5, this.game.height * 0.5 + 20);
-            } else {
+            } else if (this.game.score > 99) {
+                context.fillText('Hell yeah', this.game.width * 0.5, this.game.height * 0.5 - 20);
+                context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
+                context.fillText('No evil monster can stop you!', this.game.width * 0.5, this.game.height * 0.5 + 20);
+            }  
+            
+            else {
                 context.fillText('Love at first bite?', this.game.width * 0.5, this.game.height * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
                 context.fillText('Nope. Better luck next time!', this.game.width * 0.5, this.game.height * 0.5 + 20);
