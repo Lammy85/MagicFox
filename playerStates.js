@@ -46,12 +46,15 @@ export class Sitting extends State {
 export class Running extends State {
     constructor(game) {
         super('RUNNING', game);
+        this.runsound = new Audio();
+        this.runsound.src = "assets/sfx_step_grass_l.flac";
     }
     enter() {
         this.game.player.frameX = 0;
         this.game.player.maxFrame = 8;
         this.game.player.frameY = 3;
     }
+
     handleInput(input) {
         this.game.particles.unshift(new Dust(this.game, this.game.player.x
             + this.game.player.width * 0.5, this.game.player.y + this.game.player.height));

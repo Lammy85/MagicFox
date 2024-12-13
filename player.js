@@ -30,6 +30,9 @@ export class Player {
     update(input, deltaTime) {
         this.checkCollision();
         this.currentState.handleInput(input);
+        if (this.currentState === this.states[1]) {
+            this.currentState.runsound.play();
+        }
         // horizontal movement
         this.x += this.speed;
         if (input.includes('ArrowRight') && this.currentState !== this.states[6]) this.speed = this.maxSpeed;
@@ -80,12 +83,12 @@ export class Player {
                 if (this.currentState === this.states[4] ||
                     this.currentState === this.states[5]) {
                     enemy.markedForDeletion = true;
-                    this.game.score ++;
+                    this.game.score++;
                     this.game.floatingMessages.push(new floatingMessage('+1', enemy.x, enemy.y, 150, 50));
                 } else if (!enemy.markedForDeletion) {
                     this.setState(6, 0);
                     enemy.markedForDeletion = true;
-                    if (this.game.score > 0) this.game.score --;
+                    if (this.game.score > 0) this.game.score--;
                     this.game.lives--;
                     if (this.game.lives <= 0) this.game.gameOver = true;
                 }
