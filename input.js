@@ -12,7 +12,7 @@ export class InputHandler {
                 this.keys.push(e.key);
                 e.preventDefault();
             } else if (e.key === 'd') this.game.debug = !this.game.debug;
-            else if (e.key === 'p') this.game.pause = !this.game.pause;
+            else if (e.key === 'p' && !this.game.startscreen) this.game.pause = !this.game.pause;
             else if (e.key === 'r') this.game.restartGame();
             else if (e.key === 'Enter' && this.game.startscreen) this.game.startscreen = false;
 
